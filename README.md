@@ -1,29 +1,25 @@
-# Cupertino Glass
+# Cupertino desktop profile
 
-A macOS-inspired theme for **Omarchy 4**, with a Catppuccin Macchiato palette, blue folded-wave wallpaper, and an optional desktop profile with a magnifying dock, application grid, control center and compact menu bar.
+A macOS-inspired desktop profile for **Omarchy 4**, with a magnifying dock, application grid, control center and compact menu bar. This is the standalone home of the optional profile previously bundled with the Cupertino Glass theme.
 
 ![Cupertino Glass desktop with an editor and terminal](preview.png)
 
-## Install the theme
-
-```sh
-omarchy theme install https://github.com/Saimper/omarchy-cupertino-glass-theme
-```
-
-This installs the palette and wallpaper through Omarchy's normal theme mechanism. Switch back to another theme with the usual theme selector. It does not install the optional desktop profile.
+For the palette and wallpaper alone, install [Saimper Glass](https://github.com/Saimper/omarchy-saimper-glass-theme). This repository contains desktop tools and must not be installed with `omarchy theme install`.
 
 ## Install the complete desktop profile
 
 The dock, control center and menu bar in the screenshot come from the separate profile in `profile/`. It requires Omarchy 4's Quickshell shell, Lua-based Hyprland configuration, Python 3, GTK 3/4, fontconfig and JetBrainsMono Nerd Font. It was developed on Hyprland 0.56.2; inspect the configuration before using a different compositor version.
 
 ```sh
-git clone https://github.com/Saimper/omarchy-cupertino-glass-theme
-cd omarchy-cupertino-glass-theme
+git clone https://github.com/Saimper/omarchy-cupertino-desktop
+cd omarchy-cupertino-desktop
 ./profile/bin/cupertino install
 ~/.local/bin/cupertino apply dark
 ```
 
 The installer refuses to overwrite an existing Cupertino installation. It stores assets in `~/.local/share/cupertino-glass` and recovery snapshots in `~/.local/state/cupertino-glass`. Keep those snapshots. The full profile changes user configuration and appearance preferences; it does not replace Omarchy's packaged system files.
+
+Existing installations retain the `cupertino` command, plugin identifiers and recovery paths. Moving the source to this repository does not require reinstalling an existing profile.
 
 Switch with the **Profiles** menu or these commands:
 
@@ -62,7 +58,7 @@ Application-specific adapters under `profile/adapters/` are optional, version-pi
 
 The screenshot is a real 1920×1080 session with only demonstration content, the bundled wallpaper, VS Code and Foot. It shows the full local profile, including optional window decorations and locally installed application icons. The distributable profile uses the open MacTahoe icon theme and Nerd Font status symbols; individual icons can therefore differ from the local preview. It does not include extracted Apple symbol catalogs, Apple wallpapers, SF Pro, proprietary application binaries or compiled Apple materials.
 
-The original wallpaper source is in `artwork/`. Dependencies and their pinned revisions are listed in [`profile/sources.lock.json`](profile/sources.lock.json). See [third-party notices](THIRD_PARTY.md) for component licenses.
+The original wallpaper source is in the [Saimper Glass theme repository](https://github.com/Saimper/omarchy-saimper-glass-theme/tree/main/artwork). Dependencies and their pinned revisions are listed in [`profile/sources.lock.json`](profile/sources.lock.json). See [third-party notices](THIRD_PARTY.md) for component licenses.
 
 ## Validation
 
